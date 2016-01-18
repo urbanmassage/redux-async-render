@@ -36,16 +36,6 @@ export const serverHelper: Redux.StoreEnhancer = (createStore: Redux.StoreCreato
   };
 };
 
-export function getPending(store: Redux.Store): Bluebird<void> {
-  let all = store.promises;
-  debug('getPending: ' + all.length);
-  if (all.length) {
-    // recursive in case new promises were introduced.
-    return Bluebird.all(all).then(() => getPending(store));
-  }
-  return Bluebird.resolve();
-}
-
 function _renderAsync<T>(store: Redux.Store, renderFn: (store: Redux.Store) => T, promises: Bluebird<any>[]): Bluebird<T> {
   // render at each loop so we detect promises
   let rendered = renderFn(store);

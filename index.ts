@@ -5,9 +5,12 @@ import * as Bluebird from 'bluebird';
 const debug = require('debug')('redux-async-render');
 const isPromise = (promise: any) => promise && typeof promise.then === 'function';
 
-export const serverHelper: Redux.StoreEnhancer = (createStore: Redux.StoreCreator) => {
-  if (typeof document !== 'undefined') return createStore;
+// istanbul ignore next
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  console.warn('You shouldn\'t include redux-async-render in client-side code');
+}
 
+export const serverHelper: Redux.StoreEnhancer = (createStore: Redux.StoreCreator) => {
   return (reducer, initialState) => {
     let promises = new Array<Bluebird<any>>();
 

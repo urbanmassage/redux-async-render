@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "**.map": true,
+    "**.js": true,
+    "index.d.ts": true
+  },
+  "typescript.tsdk": "./node_modules/typescript"
+}

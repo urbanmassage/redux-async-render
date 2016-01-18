@@ -1,0 +1,39 @@
+{
+  "name": "redux-async-render",
+  "version": "0.1.0",
+  "description": "An async server-side rendering helper",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urbanmassage/redux-async-render.git"
+  },
+  "author": "Louay Alakkad <louay@alakkad.me>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/urbanmassage/redux-async-render/issues"
+  },
+  "homepage": "https://github.com/urbanmassage/redux-async-render#readme",
+  "keywords": [
+    "redux",
+    "react",
+    "async",
+    "render",
+    "server-side",
+    "rendering"
+  ],
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "redux": "^3.0.5",
+    "typescript": "^1.7.5"
+  },
+  "peerDependencies": {
+    "redux": "~3.0"
+  }
+}

@@ -32,9 +32,12 @@
     "debug": "^2.2.0"
   },
   "devDependencies": {
+    "chai": "^3.4.1",
     "mocha": "^2.3.4",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
     "redux": "^3.0.5",
-    "typescript": "^1.7.5"
+    "typescript": "next"
   },
   "peerDependencies": {
     "redux": "~3.0"

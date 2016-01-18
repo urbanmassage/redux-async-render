@@ -1,8 +1,9 @@
 {
   "files.exclude": {
-    "**.map": true,
-    "**.js": true,
-    "index.d.ts": true
+    "**/*.map": true,
+    "**/*.js": true,
+    "index.d.ts": true,
+    "test/*.d.ts": true
   },
-  "typescript.tsdk": "./node_modules/typescript"
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

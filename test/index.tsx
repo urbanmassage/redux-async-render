@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import * as React from 'react';
-import {compose, createStore} from 'redux';
+import {createStore} from 'redux';
 import {serverHelper, renderAsync} from '../index';
 import {renderToStaticMarkup} from 'react-dom/server';
 
@@ -13,15 +13,15 @@ describe('redux-async-render', () => {
     try {
       renderAsync(store, render);
       expect.fail('shouldn\'t render when serverHelper isn\'t used');
-    } catch(err) {
+    } catch (err) {
       // ok
     }
   });
 
   it('renders', () => {
     const create = serverHelper(createStore);
-    const store = create(v => v, null);
-    const App = (store) => <noscript />;
+    const store = create(v => v);
+    const App = (props: { store: Redux.Store }) => <noscript />;
     const render = store => renderToStaticMarkup(<App store={store} />);
 
     return renderAsync(store, render).catch(err => {

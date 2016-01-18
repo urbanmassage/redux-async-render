@@ -1,5 +1,5 @@
 node_modules/
-
+*.log
 *.js
 *.map
 /index.d.ts

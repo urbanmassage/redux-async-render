@@ -3,3 +3,5 @@ node_modules/
 *.js
 *.map
 /index.d.ts
+test/*.d.ts
+lib/*.d.ts

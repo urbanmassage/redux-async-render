@@ -7,7 +7,10 @@
     "preversion": "npm run build && npm run test",
     "postversion": "git push --follow-tags",
     "build": "tsc -p .",
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha --",
+    "postcoverage": "if [ -f coverage/lcov.info ]; then node node_modules/.bin/map-coverage && mv coverage/lcov.info coverage/lcov-raw.info && mv coverage/lcov-mapped.info coverage/lcov.info; fi",
+    "sendcoverage": "if [ -f coverage/lcov.info ]; then cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js; fi"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,9 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "codecov.io": "^0.1.6",
+    "istanbul": "^0.4.2",
+    "map-coverage": "0.0.3",
     "mocha": "^2.3.4",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",

@@ -6,6 +6,8 @@
   "scripts": {
     "preversion": "npm run build && npm run test",
     "postversion": "git push --follow-tags",
+    "clean": "rm test/*.js test/*.d.ts lib/*.js lib/*.d.ts ./*.js ./index.d.ts &>2 /dev/null || true",
+    "prebuild": "npm run -s clean",
     "build": "tsc -p .",
     "test": "mocha",
     "coverage": "istanbul cover _mocha --",
